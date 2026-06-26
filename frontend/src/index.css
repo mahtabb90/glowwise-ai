@@ -1,0 +1,309 @@
+/* GlowWise AI - Premium Design System & Typography */
+
+:root {
+  /* Colors */
+  --bg-cream: #FCFAF7;
+  --bg-card: #FFFFFF;
+  --bg-accent: #F9F3EC;
+  --plum-primary: #3B243B;
+  --plum-light: #5C3D5C;
+  --plum-dark: #231223;
+  --gold-champagne: #C39B6F;
+  --gold-light: #E0C7A9;
+  --rose-gold: #E8D3C4;
+  --rose-light: #F9EBE0;
+  
+  --text-main: #332633;
+  --text-muted: #6E5C6E;
+  --text-light: #A592A5;
+  --text-white: #FFFFFF;
+  
+  --border-color: #EFE6DD;
+  --border-focus: #C39B6F;
+  
+  --status-healthy: #4E8752;
+  --status-error: #B05555;
+  --status-warning: #C7963A;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Shadows & Radius */
+  --shadow-sm: 0 2px 4px rgba(59, 36, 59, 0.04);
+  --shadow-md: 0 10px 20px rgba(59, 36, 59, 0.06);
+  --shadow-lg: 0 20px 40px rgba(59, 36, 59, 0.1);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Dark Mode Theme overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-cream: #1B121C;
+    --bg-card: #281C29;
+    --bg-accent: #322334;
+    --plum-primary: #FAF1FA;
+    --plum-light: #EBD6EB;
+    --plum-dark: #120A13;
+    --gold-champagne: #D9B388;
+    --gold-light: #ECDBC7;
+    --rose-gold: #5C3D5C;
+    --rose-light: #442B44;
+    
+    --text-main: #EFE4EF;
+    --text-muted: #C0B0C0;
+    --text-light: #948294;
+    --text-white: #1B121C;
+    
+    --border-color: #443145;
+    --border-focus: #D9B388;
+    
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-cream);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Base Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--plum-primary);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--gold-champagne);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--plum-primary);
+  color: var(--text-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--plum-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1.5px solid var(--plum-primary);
+  color: var(--plum-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--plum-primary);
+  color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+/* Custom premium layouts */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-color);
+  background-color: rgba(252, 250, 247, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--plum-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo span {
+  color: var(--gold-champagne);
+}
+
+/* Cards & Panels */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--rose-gold);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--gold-champagne);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Badge tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  background-color: var(--rose-light);
+  color: var(--plum-primary);
+}
+
+.badge-gold {
+  background-color: var(--bg-accent);
+  color: var(--gold-champagne);
+  border: 1px solid var(--rose-gold);
+}
+
+.badge-status {
+  background-color: rgba(78, 135, 82, 0.1);
+  color: var(--status-healthy);
+}
+
+.badge-status.error {
+  background-color: rgba(176, 85, 85, 0.1);
+  color: var(--status-error);
+}
+
+/* Form controls */
+.form-group {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(195, 155, 111, 0.15);
+}
+
+/* Custom interactive animation details */
+.glow-text {
+  text-shadow: 0 0 30px rgba(195, 155, 111, 0.3);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--status-healthy);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.pulse-dot.error {
+  background-color: var(--status-error);
+}

@@ -1,0 +1,47 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Node modules & frontend builds
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environments
+.env
+.env.production
+
+# Datasets and ML Models (ignores files but preserves structure via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+ml/models/*
+!ml/models/.gitkeep
+
+ml/reports/*
+!ml/reports/.gitkeep
+
+ml/notebooks/*
+!ml/notebooks/.gitkeep
