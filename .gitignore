@@ -39,9 +39,3 @@ data/processed/*
 
 ml/models/*
 !ml/models/.gitkeep
-
-ml/reports/*
-!ml/reports/.gitkeep
-
-ml/notebooks/*
-!ml/notebooks/.gitkeep
