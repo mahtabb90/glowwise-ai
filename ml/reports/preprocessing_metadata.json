@@ -1,0 +1,34 @@
+{
+    "processed_row_count": 1092967,
+    "final_column_count": 20,
+    "target_distributions": {
+        "high_satisfaction": {
+            "counts": {
+                "1": 897154,
+                "0": 195813
+            },
+            "percentages": {
+                "1": 0.8208427152878358,
+                "0": 0.17915728471216422
+            }
+        },
+        "sentiment_label": {
+            "counts": {
+                "positive": 897154,
+                "negative": 114061,
+                "neutral": 81752
+            },
+            "percentages": {
+                "positive": 0.8208427152878358,
+                "negative": 0.10435905201163438,
+                "neutral": 0.07479823270052985
+            }
+        }
+    },
+    "random_state": 42,
+    "generated_file_paths": {
+        "full_processed": "data\\processed\\glowwise_reviews_processed.csv",
+        "sample_100k": "data\\processed\\glowwise_reviews_sample_100k.csv"
+    },
+    "note": "Processed CSV files are saved locally and are excluded from version control via .gitignore."
+}
