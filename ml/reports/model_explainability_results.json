@@ -1,0 +1,306 @@
+{
+    "top_positive_terms": [
+        {
+            "term": "love",
+            "coefficient": 11.29659401433046,
+            "direction": "positive",
+            "rank": 25
+        },
+        {
+            "term": "amazing",
+            "coefficient": 9.365038159867929,
+            "direction": "positive",
+            "rank": 24
+        },
+        {
+            "term": "great",
+            "coefficient": 9.331093291859895,
+            "direction": "positive",
+            "rank": 23
+        },
+        {
+            "term": "perfect",
+            "coefficient": 9.062631125668972,
+            "direction": "positive",
+            "rank": 22
+        },
+        {
+            "term": "love this",
+            "coefficient": 8.234604379074398,
+            "direction": "positive",
+            "rank": 21
+        },
+        {
+            "term": "best",
+            "coefficient": 7.053322726179295,
+            "direction": "positive",
+            "rank": 20
+        },
+        {
+            "term": "love it",
+            "coefficient": 6.731244799723148,
+            "direction": "positive",
+            "rank": 19
+        },
+        {
+            "term": "highly recommend",
+            "coefficient": 6.699723751819338,
+            "direction": "positive",
+            "rank": 18
+        },
+        {
+            "term": "without",
+            "coefficient": 6.502491416909821,
+            "direction": "positive",
+            "rank": 17
+        },
+        {
+            "term": "really like",
+            "coefficient": 6.363673149439373,
+            "direction": "positive",
+            "rank": 16
+        },
+        {
+            "term": "soft",
+            "coefficient": 5.912626643122329,
+            "direction": "positive",
+            "rank": 15
+        },
+        {
+            "term": "awesome",
+            "coefficient": 5.786638156072384,
+            "direction": "positive",
+            "rank": 14
+        },
+        {
+            "term": "must",
+            "coefficient": 5.5556064538281404,
+            "direction": "positive",
+            "rank": 13
+        },
+        {
+            "term": "wonderful",
+            "coefficient": 5.40269962661778,
+            "direction": "positive",
+            "rank": 12
+        },
+        {
+            "term": "not greasy",
+            "coefficient": 5.352477588454317,
+            "direction": "positive",
+            "rank": 11
+        },
+        {
+            "term": "excellent",
+            "coefficient": 5.351246859569756,
+            "direction": "positive",
+            "rank": 10
+        },
+        {
+            "term": "definitely",
+            "coefficient": 5.301446435798401,
+            "direction": "positive",
+            "rank": 9
+        },
+        {
+            "term": "highly",
+            "coefficient": 5.300726687716795,
+            "direction": "positive",
+            "rank": 8
+        },
+        {
+            "term": "works",
+            "coefficient": 5.104245846232749,
+            "direction": "positive",
+            "rank": 7
+        },
+        {
+            "term": "not too",
+            "coefficient": 4.839085725241426,
+            "direction": "positive",
+            "rank": 6
+        },
+        {
+            "term": "helps",
+            "coefficient": 4.793983056160592,
+            "direction": "positive",
+            "rank": 5
+        },
+        {
+            "term": "wow",
+            "coefficient": 4.744852991947076,
+            "direction": "positive",
+            "rank": 4
+        },
+        {
+            "term": "happy",
+            "coefficient": 4.700511505675139,
+            "direction": "positive",
+            "rank": 3
+        },
+        {
+            "term": "fantastic",
+            "coefficient": 4.493012348295533,
+            "direction": "positive",
+            "rank": 2
+        },
+        {
+            "term": "better than",
+            "coefficient": 4.460387876422073,
+            "direction": "positive",
+            "rank": 1
+        }
+    ],
+    "top_negative_terms": [
+        {
+            "term": "not",
+            "coefficient": -11.864998811870356,
+            "direction": "negative",
+            "rank": 1
+        },
+        {
+            "term": "not worth",
+            "coefficient": -11.221475394582974,
+            "direction": "negative",
+            "rank": 2
+        },
+        {
+            "term": "to love",
+            "coefficient": -10.930988345265778,
+            "direction": "negative",
+            "rank": 3
+        },
+        {
+            "term": "disappointed",
+            "coefficient": -9.578996953395784,
+            "direction": "negative",
+            "rank": 4
+        },
+        {
+            "term": "meh",
+            "coefficient": -9.53499473109908,
+            "direction": "negative",
+            "rank": 5
+        },
+        {
+            "term": "unfortunately",
+            "coefficient": -8.721868804098035,
+            "direction": "negative",
+            "rank": 6
+        },
+        {
+            "term": "okay",
+            "coefficient": -7.621171055383145,
+            "direction": "negative",
+            "rank": 7
+        },
+        {
+            "term": "not for",
+            "coefficient": -7.492827172842308,
+            "direction": "negative",
+            "rank": 8
+        },
+        {
+            "term": "disappointing",
+            "coefficient": -6.913857607532988,
+            "direction": "negative",
+            "rank": 9
+        },
+        {
+            "term": "ok",
+            "coefficient": -6.733296865949005,
+            "direction": "negative",
+            "rank": 10
+        },
+        {
+            "term": "broke",
+            "coefficient": -6.629921514404113,
+            "direction": "negative",
+            "rank": 11
+        },
+        {
+            "term": "horrible",
+            "coefficient": -6.488417893639541,
+            "direction": "negative",
+            "rank": 12
+        },
+        {
+            "term": "didn",
+            "coefficient": -6.251808377560415,
+            "direction": "negative",
+            "rank": 13
+        },
+        {
+            "term": "not great",
+            "coefficient": -6.24326014750385,
+            "direction": "negative",
+            "rank": 14
+        },
+        {
+            "term": "no difference",
+            "coefficient": -6.164680103374442,
+            "direction": "negative",
+            "rank": 15
+        },
+        {
+            "term": "returning",
+            "coefficient": -6.161939067060735,
+            "direction": "negative",
+            "rank": 16
+        },
+        {
+            "term": "worst",
+            "coefficient": -5.903866750983618,
+            "direction": "negative",
+            "rank": 17
+        },
+        {
+            "term": "returned",
+            "coefficient": -5.7945535723766355,
+            "direction": "negative",
+            "rank": 18
+        },
+        {
+            "term": "sadly",
+            "coefficient": -5.638017631740754,
+            "direction": "negative",
+            "rank": 19
+        },
+        {
+            "term": "awful",
+            "coefficient": -5.590721415018338,
+            "direction": "negative",
+            "rank": 20
+        },
+        {
+            "term": "pills",
+            "coefficient": -5.38608525964596,
+            "direction": "negative",
+            "rank": 21
+        },
+        {
+            "term": "worse",
+            "coefficient": -5.357356203267962,
+            "direction": "negative",
+            "rank": 22
+        },
+        {
+            "term": "had to",
+            "coefficient": -5.320754459814543,
+            "direction": "negative",
+            "rank": 23
+        },
+        {
+            "term": "not recommend",
+            "coefficient": -5.309369191072897,
+            "direction": "negative",
+            "rank": 24
+        },
+        {
+            "term": "however",
+            "coefficient": -5.303764656010718,
+            "direction": "negative",
+            "rank": 25
+        }
+    ]
+}
