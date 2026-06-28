@@ -156,7 +156,7 @@ display(Image(filename=str(figures_dir / "cluster_top_terms.png")))
 """))
 
     cells.append(nbf.v4.new_markdown_cell("""**Written Observations**:
-- **Cluster 0: Makeup & General Enthusiasts** (27.6% size, 84.4% sat): Driven by keywords like `makeup`, `love`, `great`, and `prep`. These reviews discuss makeup wear, ease of removal, and general product enthusiasm.
+- **Cluster 0: General Beauty Enthusiasts** (27.6% size, 84.4% sat): Driven by keywords like `makeup`, `love`, `great`, and `prep`. These reviews discuss makeup wear, ease of removal, and general product enthusiasm.
 - **Cluster 1: Daily Skincare Users** (40.5% size, 76.9% sat): The largest segment, focusing on generic skin routines and product usage. This segment displays the lowest satisfaction rate (76.9%), containing critical customer feedback regarding overall efficacy.
 - **Cluster 2: Moisture & Texture Fans** (17.5% size, 87.9% sat): Dominated by keywords like `moisturizer`, `feels`, `oily`, `dry`, and `cream`. Customers focus heavily on hydration properties and skin textures, yielding the highest satisfaction rate (87.9%).
 - **Cluster 3: Acne & Blemish Care** (9.9% size, 85.9% sat): Driven by terms like `acne`, `serum`, `prone`, and `acne prone`. This segment represents users targeted specifically at blemish reduction.

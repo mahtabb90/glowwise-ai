@@ -150,7 +150,7 @@ def run_clustering():
     
     # Human-friendly cluster personas assigned based on top terms and satisfaction rates
     persona_mapping = {
-        0: "Makeup & General Enthusiasts",
+        0: "General Beauty Enthusiasts",
         1: "Daily Skincare Users",
         2: "Moisture & Texture Fans",
         3: "Acne & Blemish Care",
