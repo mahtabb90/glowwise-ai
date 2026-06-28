@@ -1,32 +1,61 @@
-# React + TypeScript + Vite
+# GlowWise AI - React Frontend Dashboard 🧴✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This is the premium React + TypeScript frontend dashboard for GlowWise AI. It connects to the FastAPI backend to visualize customer reviews sentiment classifications and unsupervised cluster insights.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🏃‍♂️ 1. Local Full-Stack Startup Instructions
 
-## React Compiler
+To run this application as a full-stack system, follow these steps:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Phase A: Launch FastAPI Backend
+1. Open a new terminal in the project root.
+2. Navigate to the backend directory and activate the virtual environment:
+   ```bash
+   cd backend
+   .venv\Scripts\Activate.ps1   # On Windows (PowerShell)
+   source .venv/bin/activate    # On Linux/macOS
+   ```
+3. Run the development API server:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+   The backend will start serving endpoints at `http://localhost:8000`.
 
-## Expanding the Oxlint configuration
+### Phase B: Launch React Frontend
+1. Open a second terminal in the project root.
+2. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+3. Install package dependencies (if not already done):
+   ```bash
+   npm install
+   ```
+4. Run the Vite development server:
+   ```bash
+   npm run dev
+   ```
+   The dashboard interface will open in your browser at `http://localhost:5173`.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+---
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## 🔌 2. API & Environment Configuration
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The React application queries the backend URL defined in the environment:
+- **Variable**: `VITE_API_URL`
+- **File**: `frontend/.env`
+- **Default value**: `http://localhost:8000`
+
+If the backend server is offline or fails to connect, the dashboard page will display warning banners and guide you to start the server, keeping health pill status states updated gracefully.
+
+---
+
+## 👥 3. Customer Cohorts fallbacks
+
+If the unsupervised clustering reports are missing or the backend is offline, the React client automatically falls back to pre-annotated static profiles for the 5 skincare segments:
+- **General Beauty Enthusiasts** (27.6% size, 84.4% satisfied)
+- **Daily Skincare Users** (40.5% size, 76.9% satisfied)
+- **Moisture & Texture Fans** (17.5% size, 87.9% satisfied)
+- **Acne & Blemish Care** (9.9% size, 85.9% satisfied)
+- **Lip Care Seekers** (4.5% size, 83.9% satisfied)
