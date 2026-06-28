@@ -42,7 +42,7 @@ The table below summarizes the five discovered customer segments from the final 
 
 | Cluster ID | Persona Name | Size | Size % | High Sat % | Avg Word Count | Top Brand Counts | Top Discovered TF-IDF Terms |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- | :--- |
-| **0** | **Makeup & General Enthusiasts** | 27,608 | 27.6% | 84.4% | 23.3 | Sephora, Clinique, Lancome | love, face, makeup, product, great, skin |
+| **0** | **General Beauty Enthusiasts** | 27,608 | 27.6% | 84.4% | 23.3 | Sephora, Clinique, Lancome | love, face, makeup, product, great, skin |
 | **1** | **Daily Skincare Users** | 40,467 | 40.5% | 76.9% | 45.4 | Sephora, Clinique, Kiehl's | skin, product, using, use, ve, really |
 | **2** | **Moisture & Texture Fans** | 17,495 | 17.5% | 87.9% | 42.1 | Clinique, Sephora, Kiehl's | skin, moisturizer, feels, oily, dry, cream |
 | **3** | **Acne & Blemish Care** | 9,926 | 9.9% | 85.9% | 47.9 | Clinique, Sephora, Murad | acne, serum, skin, prone, acne prone, product |

@@ -3,27 +3,31 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
+from app.core import config
+from app.api import prediction_routes, insights_routes
+
 # Load environment variables
 load_dotenv()
 
 # Initialize FastAPI application
 app = FastAPI(
     title="GlowWise AI API",
-    description="Skincare review intelligence ML inference and analytics API",
-    version="1.0.0"
+    description="FastAPI backend for skincare review satisfaction prediction and ML insights.",
+    version="0.1.0"
 )
 
-# Configure CORS origins
-allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://localhost:3000")
-allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",") if origin.strip()]
-
+# Configure CORS origins using config values
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
+    allow_origins=config.ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Mount APIRouters
+app.include_router(prediction_routes.router)
+app.include_router(insights_routes.router)
 
 @app.get("/health", tags=["Health"])
 async def health_check():
@@ -34,7 +38,7 @@ async def health_check():
     return {
         "status": "healthy",
         "service": "GlowWise AI Backend",
-        "version": "1.0.0",
+        "version": "0.1.0",
         "debug": os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
     }
 
