@@ -1,0 +1,56 @@
+{
+    "dummy_classifier": {
+        "accuracy": 0.82085,
+        "macro": {
+            "precision": 0.410425,
+            "recall": 0.5,
+            "f1_score": 0.45080594227970455
+        },
+        "weighted": {
+            "precision": 0.6737947224999999,
+            "recall": 0.82085,
+            "f1_score": 0.7400881154405909
+        },
+        "per_class": {
+            "low_or_medium_satisfaction": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1_score": 0.0,
+                "support": 3583
+            },
+            "high_satisfaction": {
+                "precision": 0.82085,
+                "recall": 1.0,
+                "f1_score": 0.9016118845594091,
+                "support": 16417
+            }
+        }
+    },
+    "logistic_regression": {
+        "accuracy": 0.9185,
+        "macro": {
+            "precision": 0.8462730892440145,
+            "recall": 0.916319749218113,
+            "f1_score": 0.8746628276275239
+        },
+        "weighted": {
+            "precision": 0.9319282521198524,
+            "recall": 0.9185,
+            "f1_score": 0.9222284575081763
+        },
+        "per_class": {
+            "low_or_medium_satisfaction": {
+                "precision": 0.7127914578339507,
+                "recall": 0.912922132291376,
+                "f1_score": 0.8005384238864415,
+                "support": 3583
+            },
+            "high_satisfaction": {
+                "precision": 0.9797547206540782,
+                "recall": 0.9197173661448499,
+                "f1_score": 0.9487872313686062,
+                "support": 16417
+            }
+        }
+    }
+}

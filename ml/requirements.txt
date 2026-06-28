@@ -6,3 +6,4 @@ notebook
 ipykernel
 nbformat
 nbconvert
+joblib
