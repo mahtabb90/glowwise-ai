@@ -88,6 +88,10 @@ sample_path = data_dir / "processed" / "glowwise_reviews_sample_100k.csv"
 
 print(f"Loading preprocessed sample: {sample_path.name}")
 df = pd.read_csv(sample_path)
+# Fill missing text fields that pandas parsed as NaN back to empty strings
+for col in ["review_title", "review_text", "combined_text", "ingredients"]:
+    if col in df.columns:
+        df[col] = df[col].fillna("")
 print(f"Dataset shape: {df.shape}")
 df.head(3)
 """))
