@@ -645,24 +645,6 @@ This project helped me practice the complete machine learning lifecycle:
 
 ---
 
-## 💼 Portfolio Value
-
-GlowWise AI demonstrates that I can build more than a notebook.
-
-It shows that I can:
-
-* work with real data
-* build complete ML pipelines
-* compare models critically
-* explain model decisions
-* use both supervised and unsupervised learning
-* test deep learning models
-* build APIs
-* create user-friendly frontend interfaces
-* turn machine learning into a usable product
-
----
-
 ## 🧠 Final Reflection
 
 The most important insight from this project:
