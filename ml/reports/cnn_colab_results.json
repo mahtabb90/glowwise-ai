@@ -1,0 +1,39 @@
+{
+    "accuracy": 0.90265,
+    "macro": {
+        "precision": 0.8243490225358988,
+        "recall": 0.8837563678052969,
+        "f1_score": 0.848865465770184
+    },
+    "weighted": {
+        "precision": 0.9155700812702758,
+        "recall": 0.90265,
+        "f1_score": 0.906720692683725
+    },
+    "per_class": {
+        "low_or_medium_satisfaction": {
+            "precision": 0.6823450735621935,
+            "recall": 0.8543120290259559,
+            "f1_score": 0.7587123927236528,
+            "support": 3583
+        },
+        "high_satisfaction": {
+            "precision": 0.9663529715096042,
+            "recall": 0.9132007065846379,
+            "f1_score": 0.9390310247571302,
+            "support": 16417
+        }
+    },
+    "training_time_seconds": 14.7459557056427,
+    "roc_auc": 0.9557471934320751,
+    "pr_auc": 0.989206379158762,
+    "training_size": 15000,
+    "status": "Completed",
+    "description": "1D Convolutional Neural Network (CNN) trained on Google Colab with GPU acceleration",
+    "confusion_matrix": {
+        "true_negative": 3061,
+        "false_positive": 522,
+        "false_negative": 1425,
+        "true_positive": 14992
+    }
+}
