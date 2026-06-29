@@ -57,7 +57,7 @@
                 "support": 16417
             }
         },
-        "training_time_seconds": 6.453564882278442,
+        "training_time_seconds": 5.755022048950195,
         "description": "Tuned Logistic Regression (trained on 15000 subset)",
         "training_size": 15000,
         "status": "Completed",
@@ -90,7 +90,7 @@
                 "support": 16417
             }
         },
-        "training_time_seconds": 6.276962995529175,
+        "training_time_seconds": 5.290441989898682,
         "description": "LinearSVC (trained on 15000 subset)",
         "training_size": 15000,
         "status": "Completed",
@@ -123,7 +123,7 @@
                 "support": 16417
             }
         },
-        "training_time_seconds": 3.3298299312591553,
+        "training_time_seconds": 3.7477405071258545,
         "description": "KNN using TF-IDF + SVD (n_components=100) on 15000 subset",
         "training_size": 15000,
         "status": "Completed",
@@ -156,7 +156,7 @@
                 "support": 16417
             }
         },
-        "training_time_seconds": 17.251564979553223,
+        "training_time_seconds": 14.753751277923584,
         "description": "Dense Neural Network (ANN) trained on TF-IDF + SVD features",
         "training_size": 15000,
         "status": "Completed",
@@ -164,9 +164,37 @@
         "pr_auc": 0.9725860714023098
     },
     "cnn": {
-        "skipped": true,
-        "status": "Not executed \u2013 TensorFlow/Keras not available in this environment",
-        "reason": "TensorFlow/Keras was not available in this environment.",
-        "training_size": 15000
+        "accuracy": 0.90265,
+        "macro": {
+            "precision": 0.8243490225358988,
+            "recall": 0.8837563678052969,
+            "f1_score": 0.848865465770184
+        },
+        "weighted": {
+            "precision": 0.9155700812702758,
+            "recall": 0.90265,
+            "f1_score": 0.906720692683725
+        },
+        "per_class": {
+            "low_or_medium_satisfaction": {
+                "precision": 0.6823450735621935,
+                "recall": 0.8543120290259559,
+                "f1_score": 0.7587123927236528,
+                "support": 3583
+            },
+            "high_satisfaction": {
+                "precision": 0.9663529715096042,
+                "recall": 0.9132007065846379,
+                "f1_score": 0.9390310247571302,
+                "support": 16417
+            }
+        },
+        "training_time_seconds": 14.7459557056427,
+        "description": "1D Convolutional Neural Network (CNN) trained on Google Colab with GPU acceleration",
+        "training_size": 15000,
+        "status": "Completed",
+        "roc_auc": null,
+        "pr_auc": null,
+        "skipped": false
     }
 }

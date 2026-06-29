@@ -444,14 +444,43 @@ def train_and_evaluate_all():
         plt.savefig(figures_dir / "cnn_training_curves.png", dpi=150)
         plt.close()
     else:
-        print("\n--- Skipping Model 5: CNN (TensorFlow not available) ---")
-        # Document CNN skipped
-        results["cnn"] = {
-            "skipped": True,
-            "status": "Not executed – TensorFlow/Keras not available in this environment",
-            "reason": "TensorFlow/Keras was not available in this environment.",
-            "training_size": 15000
-        }
+        # Check if Colab results exist to merge them
+        colab_results_path = reports_dir / "cnn_colab_results.json"
+        if colab_results_path.exists():
+            print("\n--- Integrating Google Colab CNN Results ---")
+            try:
+                with open(colab_results_path, "r", encoding="utf-8") as f:
+                    colab_data = json.load(f)
+                results["cnn"] = {
+                    "accuracy": colab_data["accuracy"],
+                    "macro": colab_data["macro"],
+                    "weighted": colab_data["weighted"],
+                    "per_class": colab_data["per_class"],
+                    "training_time_seconds": colab_data["training_time_seconds"],
+                    "description": colab_data["description"],
+                    "training_size": colab_data["training_size"],
+                    "status": "Completed (Colab GPU)",
+                    "roc_auc": colab_data["roc_auc"],
+                    "pr_auc": colab_data["pr_auc"],
+                    "skipped": False
+                }
+                cnn_skipped = False
+            except Exception as e:
+                print(f"Error loading Colab results: {e}")
+                results["cnn"] = {
+                    "skipped": True,
+                    "status": "Not executed – TensorFlow/Keras not available in this environment",
+                    "reason": f"TensorFlow/Keras was not available, and error reading Colab results: {e}",
+                    "training_size": 15000
+                }
+        else:
+            print("\n--- Skipping Model 5: CNN (TensorFlow not available and no Colab results found) ---")
+            results["cnn"] = {
+                "skipped": True,
+                "status": "Not executed – TensorFlow/Keras not available in this environment",
+                "reason": "TensorFlow/Keras was not available in this environment.",
+                "training_size": 15000
+            }
 
     # Add training_size, status, roc_auc, and pr_auc to results JSON
     for m in results:
@@ -714,7 +743,7 @@ def train_and_evaluate_all():
                 class_names=["Low/Medium", "High"]
             )
             
-    if not cnn_skipped:
+    if tf_available and not cnn_skipped:
         y_prob_cnn = cnn_model.predict(X_test_seq).flatten()
         y_pred_cnn = (y_prob_cnn >= 0.5).astype(int)
         plot_confusion_matrix(
