@@ -197,7 +197,7 @@ else:
 
     # Cell 9: CNN Experiment markdown
     cells.append(nbf.v4.new_markdown_cell("""## 4. Text Convolutional Neural Network (CNN) Experiment
-
+    
 ### Why CNN for Text?
 While CNNs are famously used for computer vision, they are highly effective for natural language processing because they extract local features (n-grams) regardless of their position in the sentence.
 Using a 1D convolution layer (`Conv1D`), the network slides a kernel over sequences of words. This allows the model to capture local context phrases and sentiment-bearing transitions such as:
@@ -206,8 +206,9 @@ Using a 1D convolution layer (`Conv1D`), the network slides a kernel over sequen
 * *"holy grail"*
 
 ### Skip Status Verification
-* TensorFlow is required to compile and train this model.
-* If TensorFlow is absent in the environment, the CNN experiment is **honestly skipped** rather than simulated, ensuring the integrity of our results.
+* The Text CNN was planned as a future deep learning extension.
+* It was not executed in this branch because TensorFlow/Keras was not available locally.
+* A separate branch can be created later for a Google Colab TensorFlow/Keras CNN experiment.
 """))
 
     # Cell 10: CNN Training Curves Display
