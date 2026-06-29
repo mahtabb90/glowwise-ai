@@ -666,3 +666,18 @@ Understand customers faster.
 Improve products smarter.
 Build beauty with data.
 ```
+
+---
+## 🌐 Live Demo
+
+🚀 **Frontend Demo:**  
+https://glowwise-ai.vercel.app/
+
+⚙️ **Backend API:**  
+https://glowwise-ai.onrender.com
+
+📡 **API Health Check:**  
+https://glowwise-ai.onrender.com/health
+
+🧠 **Model Status:**  
+https://glowwise-ai.onrender.com/api/model/status
