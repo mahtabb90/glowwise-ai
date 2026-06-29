@@ -50,7 +50,7 @@ The production model (trained on the full 80,000 training set) is included at th
 
 ### 4. Text CNN (Planned but Skipped)
 * **Why it was planned**: 1D CNNs capture local word patterns (receptive fields) like *"broke me out"*, *"not worth it"*, or *"holy grail"* by sliding a convolutional filter over word sequences.
-* **Skip Rationale**: Since TensorFlow/Keras was not available, the CNN model was **honestly skipped** to maintain 100% data integrity.
+* **Skip Rationale**: The Text CNN was planned as a future deep learning extension. It was not executed in this branch because TensorFlow/Keras was not available locally. A separate branch can be created later for a Google Colab TensorFlow/Keras CNN experiment.
 
 ---
 
