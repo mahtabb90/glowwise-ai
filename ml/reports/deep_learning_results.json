@@ -1,0 +1,172 @@
+{
+    "production_reference_lr_80k": {
+        "accuracy": 0.92955,
+        "macro": {
+            "precision": 0.8647946499682675,
+            "recall": 0.9216323858217192,
+            "f1_score": 0.8891399544148055
+        },
+        "weighted": {
+            "precision": 0.9382366932969398,
+            "recall": 0.92955,
+            "f1_score": 0.9320900600082123
+        },
+        "per_class": {
+            "low_or_medium_satisfaction": {
+                "precision": 0.7503454629203132,
+                "recall": 0.9092938878035166,
+                "f1_score": 0.8222082018927445,
+                "support": 3583
+            },
+            "high_satisfaction": {
+                "precision": 0.9792438370162218,
+                "recall": 0.933970883839922,
+                "f1_score": 0.9560717069368667,
+                "support": 16417
+            }
+        },
+        "description": "Tuned Logistic Regression (trained on full 80k)",
+        "training_size": 80000,
+        "status": "Completed",
+        "roc_auc": 0.9757049011722819,
+        "pr_auc": 0.9942761527153025
+    },
+    "tuned_logistic_regression": {
+        "accuracy": 0.92045,
+        "macro": {
+            "precision": 0.8528172066741829,
+            "recall": 0.899834698214078,
+            "f1_score": 0.8734184864121727
+        },
+        "weighted": {
+            "precision": 0.9279816740749047,
+            "recall": 0.92045,
+            "f1_score": 0.9229306220356799
+        },
+        "per_class": {
+            "low_or_medium_satisfaction": {
+                "precision": 0.7356838618078562,
+                "recall": 0.8677086240580519,
+                "f1_score": 0.7962607248047125,
+                "support": 3583
+            },
+            "high_satisfaction": {
+                "precision": 0.9699505515405097,
+                "recall": 0.9319607723701041,
+                "f1_score": 0.9505762480196328,
+                "support": 16417
+            }
+        },
+        "training_time_seconds": 6.453564882278442,
+        "description": "Tuned Logistic Regression (trained on 15000 subset)",
+        "training_size": 15000,
+        "status": "Completed",
+        "roc_auc": 0.9660266868014988,
+        "pr_auc": 0.991808511514352
+    },
+    "linear_svc": {
+        "accuracy": 0.92115,
+        "macro": {
+            "precision": 0.8590245261984393,
+            "recall": 0.8832427911334226,
+            "f1_score": 0.8703789686202483
+        },
+        "weighted": {
+            "precision": 0.9243784877369008,
+            "recall": 0.92115,
+            "f1_score": 0.9224358046614508
+        },
+        "per_class": {
+            "low_or_medium_satisfaction": {
+                "precision": 0.7571794871794871,
+                "recall": 0.8241696902037399,
+                "f1_score": 0.7892556461312308,
+                "support": 3583
+            },
+            "high_satisfaction": {
+                "precision": 0.9608695652173913,
+                "recall": 0.9423158920631053,
+                "f1_score": 0.9515022911092659,
+                "support": 16417
+            }
+        },
+        "training_time_seconds": 6.276962995529175,
+        "description": "LinearSVC (trained on 15000 subset)",
+        "training_size": 15000,
+        "status": "Completed",
+        "roc_auc": 0.9616551333902315,
+        "pr_auc": 0.9906168694863892
+    },
+    "knn": {
+        "accuracy": 0.832,
+        "macro": {
+            "precision": 0.7120662838575744,
+            "recall": 0.6965020857547939,
+            "f1_score": 0.7036537325103445
+        },
+        "weighted": {
+            "precision": 0.8261677896375516,
+            "recall": 0.832,
+            "f1_score": 0.828801582150387
+        },
+        "per_class": {
+            "low_or_medium_satisfaction": {
+                "precision": 0.5342549923195085,
+                "recall": 0.485347474183645,
+                "f1_score": 0.5086282538754021,
+                "support": 3583
+            },
+            "high_satisfaction": {
+                "precision": 0.8898775753956405,
+                "recall": 0.9076566973259427,
+                "f1_score": 0.8986792111452868,
+                "support": 16417
+            }
+        },
+        "training_time_seconds": 3.3298299312591553,
+        "description": "KNN using TF-IDF + SVD (n_components=100) on 15000 subset",
+        "training_size": 15000,
+        "status": "Completed",
+        "roc_auc": 0.8038982313980538,
+        "pr_auc": 0.9464579131055233
+    },
+    "ann": {
+        "accuracy": 0.8606,
+        "macro": {
+            "precision": 0.762772775480397,
+            "recall": 0.7686870503508452,
+            "f1_score": 0.765662199707414
+        },
+        "weighted": {
+            "precision": 0.8622116000871279,
+            "recall": 0.8606,
+            "f1_score": 0.8613756112514086
+        },
+        "per_class": {
+            "low_or_medium_satisfaction": {
+                "precision": 0.6078112286411717,
+                "recall": 0.6254535305609824,
+                "f1_score": 0.616506189821183,
+                "support": 3583
+            },
+            "high_satisfaction": {
+                "precision": 0.9177343223196224,
+                "recall": 0.9119205701407078,
+                "f1_score": 0.914818209593645,
+                "support": 16417
+            }
+        },
+        "training_time_seconds": 17.251564979553223,
+        "description": "Dense Neural Network (ANN) trained on TF-IDF + SVD features",
+        "training_size": 15000,
+        "status": "Completed",
+        "roc_auc": 0.8900569804439694,
+        "pr_auc": 0.9725860714023098
+    },
+    "cnn": {
+        "skipped": true,
+        "status": "Not executed \u2013 TensorFlow/Keras not available in this environment",
+        "reason": "TensorFlow/Keras was not available in this environment.",
+        "training_size": 15000
+    }
+}
