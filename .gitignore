@@ -37,5 +37,9 @@ data/raw/*
 data/processed/*
 !data/processed/.gitkeep
 
+# Ignore local ML model artifacts by default
 ml/models/*
+
+# Keep only the production model needed for deployment
+!ml/models/best_satisfaction_model.joblib
 !ml/models/.gitkeep
