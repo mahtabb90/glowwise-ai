@@ -1,0 +1,13 @@
+# Deep learning dependencies for GlowWise AI experiments
+# Note: TensorFlow is required for the CNN model, and is optional/recommended for the ANN model.
+# If TensorFlow is not available, the code falls back to scikit-learn's MLPClassifier for the ANN and skips the CNN.
+tensorflow>=2.12.0
+scikit-learn
+matplotlib
+pandas
+numpy
+notebook
+ipykernel
+nbformat
+nbconvert
+joblib

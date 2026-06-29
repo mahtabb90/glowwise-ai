@@ -62,13 +62,14 @@ def calculate_metrics(y_true, y_pred) -> dict:
         "per_class": per_class_metrics
     }
 
-def plot_confusion_matrix(y_true, y_pred, output_path: str, title: str = "Confusion Matrix"):
+def plot_confusion_matrix(y_true, y_pred, output_path: str, title: str = "Confusion Matrix", class_names: list = None):
     """
     Generates and saves a premium styled confusion matrix using matplotlib.
-    Uses class labels: 'low_or_medium_satisfaction' (0) and 'high_satisfaction' (1).
+    Uses class labels: 'low_or_medium_satisfaction' (0) and 'high_satisfaction' (1) by default.
     Styled to match the GlowWise theme (Deep Plum and Rose accents).
     """
-    class_names = ["low_or_medium_satisfaction", "high_satisfaction"]
+    if class_names is None:
+        class_names = ["low_or_medium_satisfaction", "high_satisfaction"]
     
     # Compute confusion matrix
     cm = confusion_matrix(y_true, y_pred)
