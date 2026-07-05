@@ -37,15 +37,18 @@ export const TermsSection: React.FC<TermsSectionProps> = ({ terms, loading, erro
       <h3 className="text-xl font-bold text-plum mb-2 flex items-center gap-2">
         <span>🌸</span> What drives love vs disappointment
       </h3>
-      <p className="text-xs text-muted-plum mb-6">
-        Driver coefficients extracted from the Tuned Logistic Regression model indicating which review keywords correlate with satisfied reviews vs. critical product issues.
+      <p className="text-xs text-muted-plum mb-1.5">
+        Review words learned by the model, showing which terms are most strongly connected to happy customers versus disappointed customers. Higher score means stronger influence in the prediction.
       </p>
+      <div className="text-[10px] text-gold-dark font-semibold italic mb-6">
+        * Scores show model influence, not percentages.
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Positive terms */}
         <div className="space-y-3">
           <h4 className="text-xs uppercase tracking-wider font-bold text-plum flex items-center gap-1-5">
-            <span className="text-green-600">👍</span> Top High Satisfaction Drivers
+            <span className="text-green-600">👍</span> Top Love Drivers
           </h4>
           <div className="flex flex-wrap gap-2">
             {pos.length === 0 ? (
@@ -67,7 +70,7 @@ export const TermsSection: React.FC<TermsSectionProps> = ({ terms, loading, erro
         {/* Negative terms */}
         <div className="space-y-3">
           <h4 className="text-xs uppercase tracking-wider font-bold text-plum flex items-center gap-1-5">
-            <span className="text-red-500">👎</span> Top Low/Medium Satisfaction Drivers
+            <span className="text-red-500">👎</span> Top Disappointment Drivers
           </h4>
           <div className="flex flex-wrap gap-2">
             {neg.length === 0 ? (

@@ -112,7 +112,7 @@ export const ClusterCards: React.FC<ClusterCardsProps> = ({ clusters, loading, e
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="personas-grid">
         {profiles.map((p) => (
           <div 
             key={`cluster-${p.cluster_id}`}
@@ -129,32 +129,39 @@ export const ClusterCards: React.FC<ClusterCardsProps> = ({ clusters, loading, e
                 </span>
               </div>
               
-              <h4 className="text-base font-bold text-plum mb-3 flex items-center gap-2">
+              <h4 className="text-base font-bold text-plum mb-2 flex items-center gap-2">
                 <span>{getClusterIcon(p.cluster_id)}</span> {p.persona_name}
               </h4>
 
+              {/* Business insight badge for Daily Skincare Users */}
+              {p.cluster_id === 1 && (
+                <div className="insight-badge">
+                  <span>💡</span> Lowest satisfaction segment — useful for product improvement.
+                </div>
+              )}
+ 
               {/* Core metrics */}
-              <div className="grid grid-cols-2 gap-2 bg-cream/40 p-3 rounded-xl border border-rose-gold/10 mb-4 text-xs">
+              <div className="flex flex-col gap-1-5 bg-cream/40 p-3 rounded-xl border border-rose-gold/10 mb-4 text-xs">
                 <div>
-                  <span className="block text-[10px] text-muted-plum font-semibold uppercase">High Sat. Rate</span>
-                  <span className="font-bold text-gold-dark text-sm">{Math.round(p.high_satisfaction_rate * 1000) / 10}%</span>
+                  <span className="text-[10px] text-muted-plum font-bold uppercase tracking-wider">High Satisfaction Rate:</span>{' '}
+                  <span className="font-bold text-gold-dark">{Math.round(p.high_satisfaction_rate * 1000) / 10}%</span>
                 </div>
                 <div>
-                  <span className="block text-[10px] text-muted-plum font-semibold uppercase">Avg. Word Count</span>
-                  <span className="font-bold text-plum text-sm">{Math.round(p.avg_word_count)} words</span>
+                  <span className="text-[10px] text-muted-plum font-bold uppercase tracking-wider">Average Word Count:</span>{' '}
+                  <span className="font-bold text-plum">{Math.round(p.avg_word_count)} words</span>
                 </div>
               </div>
-
+ 
               {/* Top Brands */}
-              <div className="mb-3">
-                <span className="block text-[10px] uppercase font-bold text-muted-plum tracking-wider mb-1">Top Brands</span>
-                <span className="text-xs text-plum font-semibold">{p.top_brands}</span>
+              <div className="mb-4 text-xs">
+                <span className="text-[10px] uppercase font-bold text-muted-plum tracking-wider">Top Brands:</span>{' '}
+                <span className="text-plum font-semibold">{p.top_brands}</span>
               </div>
             </div>
 
             {/* Top Terms chips */}
             <div className="pt-3 border-t border-rose-gold/10">
-              <span className="block text-[10px] uppercase font-bold text-muted-plum tracking-wider mb-1.5">Vocabulary Terms</span>
+              <span className="block text-[10px] uppercase font-bold text-muted-plum tracking-wider mb-1.5">Vocabulary Terms:</span>
               <div className="flex flex-wrap gap-1">
                 {p.top_terms.split(',').slice(0, 6).map((term, idx) => (
                   <span 

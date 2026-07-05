@@ -101,6 +101,167 @@ function App() {
         
         {/* Hero Section */}
         <section className="hero-banner p-6 md:p-8 rounded-2xl mb-10 text-center">
+          {/* Ambient Glow & Decorative Curves */}
+          <div className="hero-decorations-wrapper">
+            {/* Left Side Glow & SVG */}
+            <div className="glow-blob glow-blob-left-1" />
+            <div className="glow-blob glow-blob-left-2" />
+            <div className="glow-blob glow-blob-left-3" />
+            
+            <svg className="hero-svg-deco hero-svg-deco-left" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="left-grad-1" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#FFEAD8" stopOpacity="0" />
+                  <stop offset="30%" stopColor="#FFE5D9" stopOpacity="0.9" />
+                  <stop offset="70%" stopColor="#FCD5CE" stopOpacity="0.95" />
+                  <stop offset="100%" stopColor="#FFEAD8" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="left-grad-2" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#E8D3C4" stopOpacity="0" />
+                  <stop offset="50%" stopColor="#FFFFFF" stopOpacity="0.85" />
+                  <stop offset="100%" stopColor="#FFEAD8" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="leaf-grad-left" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FFE5D9" stopOpacity="0.95" />
+                  <stop offset="100%" stopColor="#FCD5CE" stopOpacity="0.8" />
+                </linearGradient>
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              {/* Main swooping curves */}
+              <path d="M -20,380 C 100,360 30,180 150,110 C 200,75 220,60 250,20" stroke="url(#left-grad-1)" strokeWidth="3.5" filter="url(#glow)" />
+              <path d="M -20,380 C 100,360 30,180 150,110 C 200,75 220,60 250,20" stroke="#FFFFFF" strokeWidth="1" opacity="0.95" />
+              <path d="M -40,350 C 70,330 10,160 120,90 C 160,65 190,50 210,10" stroke="url(#left-grad-2)" strokeWidth="1.5" opacity="0.85" />
+              <path d="M 20,390 C 130,370 70,220 180,140" stroke="url(#left-grad-1)" strokeWidth="1" opacity="0.75" />
+
+              {/* Leaf branch 1 */}
+              <path d="M 50,270 Q 75,250 85,220" stroke="url(#left-grad-1)" strokeWidth="1.5" />
+              <g transform="translate(85, 220) rotate(-35) scale(1.05)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-left)" />
+                <path d="M0,0 Q12,-15 24,-12" stroke="#FFFFFF" strokeWidth="0.5" opacity="0.7" />
+              </g>
+              <g transform="translate(68, 245) rotate(-60) scale(0.85)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-left)" />
+              </g>
+
+              {/* Leaf branch 2 (higher up) */}
+              <path d="M 105,170 Q 130,150 145,115" stroke="url(#left-grad-1)" strokeWidth="1.5" />
+              <g transform="translate(145, 115) rotate(-15) scale(1.2)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-left)" />
+                <path d="M0,0 Q12,-15 24,-12" stroke="#FFFFFF" strokeWidth="0.5" opacity="0.7" />
+              </g>
+              <g transform="translate(125, 140) rotate(-40) scale(0.95)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-left)" />
+              </g>
+              <g transform="translate(112, 160) rotate(20) scale(0.8)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-left)" opacity="0.95" />
+              </g>
+
+              {/* Sparkles / Stars */}
+              <g className="sparkle-element" transform="translate(110, 260) scale(1.0)">
+                <path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z" fill="#FFFFFF" opacity="0.95" />
+                <circle cx="0" cy="0" r="3" fill="#FFEAD8" filter="url(#glow)" />
+              </g>
+              <g className="sparkle-element" style={{ animationDelay: '1.5s' }} transform="translate(170, 80) scale(1.25)">
+                <path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z" fill="#FFFFFF" opacity="0.95" />
+                <circle cx="0" cy="0" r="3" fill="#C39B6F" filter="url(#glow)" />
+              </g>
+              <g className="sparkle-element" style={{ animationDelay: '0.7s' }} transform="translate(40, 180) scale(0.8)">
+                <path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z" fill="#FFFFFF" opacity="0.9" />
+              </g>
+              <g className="sparkle-element" style={{ animationDelay: '2.2s' }} transform="translate(210, 150) scale(0.85)">
+                <path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z" fill="#FFFFFF" opacity="0.95" />
+                <circle cx="0" cy="0" r="2" fill="#FFEAD8" filter="url(#glow)" />
+              </g>
+              
+              {/* Soft round light orbs */}
+              <circle cx="90" cy="310" r="5" fill="#FFFFFF" opacity="0.75" filter="url(#glow)" />
+              <circle cx="195" cy="140" r="4" fill="#FFFFFF" opacity="0.65" filter="url(#glow)" />
+            </svg>
+
+            {/* Right Side Glow & SVG */}
+            <div className="glow-blob glow-blob-right-1" />
+            <div className="glow-blob glow-blob-right-2" />
+            <div className="glow-blob glow-blob-right-3" />
+
+            <svg className="hero-svg-deco hero-svg-deco-right" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="right-grad-1" x1="100%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stopColor="#FFEAD8" stopOpacity="0" />
+                  <stop offset="30%" stopColor="#FFE5D9" stopOpacity="0.9" />
+                  <stop offset="70%" stopColor="#FCD5CE" stopOpacity="0.95" />
+                  <stop offset="100%" stopColor="#FFEAD8" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="right-grad-2" x1="100%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stopColor="#E8D3C4" stopOpacity="0" />
+                  <stop offset="50%" stopColor="#FFFFFF" stopOpacity="0.85" />
+                  <stop offset="100%" stopColor="#FFEAD8" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="leaf-grad-right" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#FFE5D9" stopOpacity="0.95" />
+                  <stop offset="100%" stopColor="#FCD5CE" stopOpacity="0.8" />
+                </linearGradient>
+                <filter id="glow-right" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              {/* Main swooping curves */}
+              <path d="M 320,380 C 200,360 270,180 150,110 C 100,75 80,60 50,20" stroke="url(#right-grad-1)" strokeWidth="3.5" filter="url(#glow-right)" />
+              <path d="M 320,380 C 200,360 270,180 150,110 C 100,75 80,60 50,20" stroke="#FFFFFF" strokeWidth="1" opacity="0.95" />
+              <path d="M 340,350 C 230,330 290,160 180,90 C 140,65 110,50 90,10" stroke="url(#right-grad-2)" strokeWidth="1.5" opacity="0.85" />
+              <path d="M 280,390 C 170,370 230,220 120,140" stroke="url(#right-grad-1)" strokeWidth="1" opacity="0.75" />
+
+              {/* Leaf branch 1 */}
+              <path d="M 250,270 Q 225,250 215,220" stroke="url(#right-grad-1)" strokeWidth="1.5" />
+              <g transform="translate(215, 220) rotate(-145) scale(1.05)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-right)" />
+                <path d="M0,0 Q12,-15 24,-12" stroke="#FFFFFF" strokeWidth="0.5" opacity="0.7" />
+              </g>
+              <g transform="translate(232, 245) rotate(-120) scale(0.85)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-right)" />
+              </g>
+
+              {/* Leaf branch 2 (higher up) */}
+              <path d="M 195,170 Q 170,150 155,115" stroke="url(#right-grad-1)" strokeWidth="1.5" />
+              <g transform="translate(155, 115) rotate(-165) scale(1.2)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-right)" />
+                <path d="M0,0 Q12,-15 24,-12" stroke="#FFFFFF" strokeWidth="0.5" opacity="0.7" />
+              </g>
+              <g transform="translate(175, 140) rotate(-140) scale(0.95)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-right)" />
+              </g>
+              <g transform="translate(188, 160) rotate(-200) scale(0.8)">
+                <path d="M0,0 Q12,-15 24,-12 Q20,3 0,0 Z" fill="url(#leaf-grad-right)" opacity="0.95" />
+              </g>
+
+              {/* Sparkles / Stars */}
+              <g className="sparkle-element" style={{ animationDelay: '0.5s' }} transform="translate(190, 260) scale(1.0)">
+                <path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z" fill="#FFFFFF" opacity="0.9" />
+                <circle cx="0" cy="0" r="3" fill="#FFEAD8" filter="url(#glow-right)" />
+              </g>
+              <g className="sparkle-element" style={{ animationDelay: '2s' }} transform="translate(130, 80) scale(1.15)">
+                <path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z" fill="#FFFFFF" opacity="0.95" />
+                <circle cx="0" cy="0" r="3" fill="#C39B6F" filter="url(#glow-right)" />
+              </g>
+              <g className="sparkle-element" style={{ animationDelay: '1.2s' }} transform="translate(260, 180) scale(0.8)">
+                <path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z" fill="#FFFFFF" opacity="0.8" />
+              </g>
+              <g className="sparkle-element" style={{ animationDelay: '1.8s' }} transform="translate(90, 150) scale(0.85)">
+                <path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z" fill="#FFFFFF" opacity="0.95" />
+                <circle cx="0" cy="0" r="2" fill="#FFEAD8" filter="url(#glow-right)" />
+              </g>
+
+              {/* Soft round light orbs */}
+              <circle cx="210" cy="310" r="5" fill="#FFFFFF" opacity="0.75" filter="url(#glow-right)" />
+              <circle cx="105" cy="140" r="4" fill="#FFFFFF" opacity="0.65" filter="url(#glow-right)" />
+            </svg>
+          </div>
+
           <div className="max-w-2xl mx-auto space-y-4">
             <h2 className="text-4xl md:text-5xl font-black text-luxury-gradient tracking-tight leading-none mb-1">
               GlowWise AI

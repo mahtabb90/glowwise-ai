@@ -21,34 +21,46 @@ export const ProjectStory: React.FC = () => {
       desc: "Fitted a TF-IDF + Logistic Regression baseline achieving an 87.5% Macro F1 score."
     },
     {
-      phase: "4. Optimization",
-      title: "Comparing 7 ML Architectures",
+      phase: "4. Model Optimization",
+      title: "Comparing Classical ML & Deep Learning Models",
       icon: "🔬",
-      desc: "Ran grid search over regularization strengths, selecting Tuned Logistic Regression."
+      desc: "Compared Logistic Regression, LinearSVC, KNN, ANN/MLP and Text CNN to select the strongest production model."
     },
     {
-      phase: "5. Explainability",
-      title: "Extracting Word Coefficients",
+      phase: "5. Advanced ML",
+      title: "Testing ANN, KNN & Text CNN",
+      icon: "🧠",
+      desc: "Extended the experiment with neural networks, KNN + SVD and a real TensorFlow/Keras Text CNN trained in Google Colab."
+    },
+    {
+      phase: "6. Explainability",
+      title: "Explaining Model Decisions",
       icon: "💬",
-      desc: "Identified positive satisfaction drivers and isolated confidently wrong classification cases."
+      desc: "Identified positive and negative word drivers behind customer satisfaction predictions."
     },
     {
-      phase: "6. Customer Segments",
+      phase: "7. Customer Segments",
       title: "Unsupervised K-Means Clustering",
       icon: "👥",
-      desc: "Reduced dimensions using SVD and profiled 5 cohorts with post-hoc sat. rates."
+      desc: "Reduced dimensions using SVD and profiled 5 cohorts with post-hoc satisfaction rates."
     },
     {
-      phase: "7. Serving API",
+      phase: "8. Serving API",
       title: "Exposing ML Model Endpoints",
       icon: "⚡",
       desc: "Constructed FastAPI services with lazy model loading and robust payload validations."
     },
     {
-      phase: "8. Skincare UI",
+      phase: "9. Skincare UI",
       title: "Interactive Web Dashboard",
       icon: "🌸",
       desc: "Implemented a responsive, premium React dashboard showcasing predictions and segmentation."
+    },
+    {
+      phase: "10. Live Deployment",
+      title: "Deploying a Full-Stack ML Product",
+      icon: "🚀",
+      desc: "Published the FastAPI backend on Render and the React frontend on Vercel for live prediction."
     }
   ];
 
