@@ -1,5 +1,13 @@
 {
-    "status": "prepared_for_colab",
-    "local_execution": "skipped",
-    "reason": "TensorFlow/Keras not available locally"
+    "status": "completed",
+    "local_execution": "completed_via_colab",
+    "sample_size": 20000,
+    "epochs_trained": 50,
+    "final_training_loss_mse": 0.001504381187260151,
+    "final_validation_loss_mse": 0.0015539571177214384,
+    "anomaly_threshold_95th_percentile": 0.003090546510598478,
+    "total_anomalies_count": 1000,
+    "reconstruction_error_mean": 0.0015044935997614148,
+    "reconstruction_error_std": 0.0008482539125327411,
+    "training_time_seconds": 50.194196462631226
 }
