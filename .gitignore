@@ -29,6 +29,9 @@ Thumbs.db
 # Environments
 .env
 .env.production
+.env.local
+.env.development
+.env.staging
 
 # Datasets and ML Models (ignores files but preserves structure via .gitkeep)
 data/raw/*
@@ -47,5 +50,7 @@ ml/models/*
 # Local embedding and network cache folders
 ml/cache/
 ml/notebooks/cache/
+# Ignore local caching of intermediate embeddings or features
+ml/cache/
 *.npy
 *.npz
