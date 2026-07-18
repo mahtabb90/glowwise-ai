@@ -47,6 +47,9 @@ ml/models/*
 !ml/models/best_satisfaction_model.joblib
 !ml/models/.gitkeep
 
+# Local embedding and network cache folders
+ml/cache/
+ml/notebooks/cache/
 # Ignore local caching of intermediate embeddings or features
 ml/cache/
 *.npy
