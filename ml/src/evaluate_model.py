@@ -83,7 +83,7 @@ def plot_confusion_matrix(y_true, y_pred, output_path: str, title: str = "Confus
     plt.style.use('seaborn-v0_8-whitegrid' if 'seaborn-v0_8-whitegrid' in plt.style.available else 'default')
     plt.rcParams['font.family'] = 'sans-serif'
     
-    fig, ax = plt.subplots(figsize=(6.5, 5.5))
+    fig, ax = plt.subplots(figsize=(6.5, 5.5), layout="constrained")
     
     # GlowWise Brand Colors
     COLOR_PLUM = '#3B243B'
@@ -95,7 +95,7 @@ def plot_confusion_matrix(y_true, y_pred, output_path: str, title: str = "Confus
     im = ax.imshow(cm_norm, interpolation='nearest', cmap=cmap)
     
     # Colorbar
-    cbar = ax.figure.colorbar(im, ax=ax, format='%.2f')
+    cbar = ax.figure.colorbar(im, ax=ax, format='%.2f', pad=0.08)
     cbar.ax.tick_params(labelsize=9)
     cbar.outline.set_visible(False)
     
@@ -107,7 +107,7 @@ def plot_confusion_matrix(y_true, y_pred, output_path: str, title: str = "Confus
     ax.set_yticklabels(class_names, fontsize=9, color='#332633')
     
     # Labels & Title
-    ax.set_title(title, fontsize=12, pad=20, fontweight='bold', color=COLOR_PLUM)
+    ax.set_title(title, fontsize=10.5, pad=25, fontweight='bold', color=COLOR_PLUM)
     ax.set_xlabel('Predicted Label', fontsize=10, labelpad=10, fontweight='bold', color=COLOR_PLUM)
     ax.set_ylabel('True Label', fontsize=10, labelpad=10, fontweight='bold', color=COLOR_PLUM)
     
@@ -124,9 +124,7 @@ def plot_confusion_matrix(y_true, y_pred, output_path: str, title: str = "Confus
                 color="white" if cm_norm[i, j] > thresh else COLOR_PLUM,
                 fontsize=10, fontweight='bold')
                 
-    plt.tight_layout()
-    
-    # Save file
+
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path, dpi=150, bbox_inches='tight')
     plt.close()
