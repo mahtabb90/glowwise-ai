@@ -1,0 +1,5 @@
+{
+    "status": "prepared_for_colab",
+    "local_execution": "skipped",
+    "reason": "TensorFlow/Keras not available locally"
+}
