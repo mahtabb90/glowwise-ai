@@ -1,0 +1,9 @@
+# Transformer NLP Experiment dependencies
+# Install with: pip install -r ml/requirements-transformer.txt
+
+# CPU-only PyTorch is recommended for light/fast local environment execution:
+# pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+sentence-transformers>=2.2.2
+transformers>=4.30.0
+torch>=2.0.0

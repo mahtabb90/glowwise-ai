@@ -29,6 +29,9 @@ Thumbs.db
 # Environments
 .env
 .env.production
+.env.local
+.env.development
+.env.staging
 
 # Datasets and ML Models (ignores files but preserves structure via .gitkeep)
 data/raw/*
@@ -43,3 +46,8 @@ ml/models/*
 # Keep only the production model needed for deployment
 !ml/models/best_satisfaction_model.joblib
 !ml/models/.gitkeep
+
+# Ignore local caching of intermediate embeddings or features
+ml/cache/
+*.npy
+*.npz
