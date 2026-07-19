@@ -6,31 +6,31 @@ export const ProjectStory: React.FC = () => {
       phase: "1. Dataset Audit",
       title: "Auditing Sephora Skincare Data",
       icon: "📊",
-      desc: "Analyzed review ratings and verified class distributions to isolate baseline targets."
+      desc: "Analyzed review ratings, missing values and class distributions to define the prediction target."
     },
     {
       phase: "2. Preprocessing",
       title: "Creating Clean ML-Ready Datasets",
       icon: "🌿",
-      desc: "Merged product metadata and filtered duplicates to prepare structured training rows."
+      desc: "Merged product metadata, cleaned review text and prepared structured training data."
     },
     {
       phase: "3. Benchmarking",
       title: "Establishing Baselines",
       icon: "🧪",
-      desc: "Fitted a TF-IDF + Logistic Regression baseline achieving an 87.5% Macro F1 score."
+      desc: "Started with Dummy and TF-IDF + Logistic Regression models to create a reliable baseline."
     },
     {
       phase: "4. Model Optimization",
-      title: "Comparing Classical ML & Deep Learning Models",
+      title: "Comparing Classical ML Models",
       icon: "🔬",
-      desc: "Compared Logistic Regression, LinearSVC, KNN, ANN/MLP and Text CNN to select the strongest production model."
+      desc: "Compared Logistic Regression, LinearSVC, Naive Bayes, SGD and metadata-enhanced models."
     },
     {
-      phase: "5. Advanced ML",
-      title: "Testing ANN, KNN & Text CNN",
+      phase: "5. Advanced ML & NLP",
+      title: "Testing ANN, Text CNN & Transformer",
       icon: "🧠",
-      desc: "Extended the experiment with neural networks, KNN + SVD and a real TensorFlow/Keras Text CNN trained in Google Colab."
+      desc: "Extended the experiments with neural networks, TensorFlow/Keras Text CNN and transformer-based transfer learning embeddings."
     },
     {
       phase: "6. Explainability",
@@ -40,27 +40,33 @@ export const ProjectStory: React.FC = () => {
     },
     {
       phase: "7. Customer Segments",
-      title: "Unsupervised K-Means Clustering",
+      title: "Discovering Beauty Personas",
       icon: "👥",
-      desc: "Reduced dimensions using SVD and profiled 5 cohorts with post-hoc satisfaction rates."
+      desc: "Used unsupervised K-Means clustering to discover review-based customer personas."
     },
     {
-      phase: "8. Serving API",
+      phase: "8. Anomaly Detection",
+      title: "Monitoring Unusual Reviews",
+      icon: "🛡️",
+      desc: "Added an autoencoder experiment to flag unusual skincare reviews using reconstruction error."
+    },
+    {
+      phase: "9. Future Extension",
+      title: "TCN Sequence Modeling",
+      icon: "🔮",
+      desc: "Documented how Temporal Convolutional Networks could model review text as token sequences in future work."
+    },
+    {
+      phase: "10. Serving API",
       title: "Exposing ML Model Endpoints",
       icon: "⚡",
-      desc: "Constructed FastAPI services with lazy model loading and robust payload validations."
+      desc: "Built FastAPI services with lazy model loading and prediction endpoints."
     },
     {
-      phase: "9. Skincare UI",
+      phase: "11. Skincare UI",
       title: "Interactive Web Dashboard",
       icon: "🌸",
-      desc: "Implemented a responsive, premium React dashboard showcasing predictions and segmentation."
-    },
-    {
-      phase: "10. Live Deployment",
-      title: "Deploying a Full-Stack ML Product",
-      icon: "🚀",
-      desc: "Published the FastAPI backend on Render and the React frontend on Vercel for live prediction."
+      desc: "Implemented a responsive React dashboard for predictions, explainability and customer insights."
     }
   ];
 
