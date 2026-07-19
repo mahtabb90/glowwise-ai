@@ -26,10 +26,24 @@ export const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isAna
       text: "Highly disappointed with this product. It broke me out in acne all over my face within two days and left a greasy residue.",
       product: "Super Hydrator Gel",
       brand: "Murad"
+    },
+    mixed: {
+      title: "Good hydration but caused some irritation",
+      text: "I liked how moisturizing this product felt and my skin looked softer after a few uses. However, after a week I started to notice some redness and small breakouts around my cheeks. It is not terrible, but I am not sure if I would buy it again.",
+      product: "Daily Balance Moisturizer",
+      brand: "The Ordinary"
+    },
+    mildly_positive: {
+      title: "Pretty good overall",
+      text: "This cream worked fairly well for my dry skin and helped reduce tightness, especially at night. It is not the most impressive product I have tried, and the texture is a little heavy, but overall it does the job and I would consider using it again.",
+      product: "Calm Repair Cream",
+      brand: "CeraVe"
     }
   };
 
-  const handleApplyPreset = (type: 'positive' | 'negative') => {
+  type PresetType = keyof typeof presets;
+
+  const handleApplyPreset = (type: PresetType) => {
     const p = presets[type];
     setTitle(p.title);
     setText(p.text);
@@ -59,7 +73,8 @@ export const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isAna
         <span>🌸</span> Try GlowWise
       </h3>
 
-      <div className="flex gap-2 mb-6">
+      {/* Row 1 Example Buttons */}
+      <div className="flex gap-2 mb-2">
         <button
           type="button"
           onClick={() => handleApplyPreset('positive')}
@@ -75,6 +90,26 @@ export const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isAna
           className="flex-1 text-xs py-2 px-3 rounded-lg border border-red-200 bg-red-50 text-red-700 hover:bg-red-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           💥 Apply Negative Example
+        </button>
+      </div>
+
+      {/* Row 2 Example Buttons */}
+      <div className="flex gap-2 mb-6">
+        <button
+          type="button"
+          onClick={() => handleApplyPreset('mixed')}
+          disabled={disabled || isAnalyzing}
+          className="flex-1 text-xs py-2 px-3 rounded-lg border border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        >
+          ⚖️ Apply Mixed Example
+        </button>
+        <button
+          type="button"
+          onClick={() => handleApplyPreset('mildly_positive')}
+          disabled={disabled || isAnalyzing}
+          className="flex-1 text-xs py-2 px-3 rounded-lg border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        >
+          🌿 Apply Mildly Positive Example
         </button>
       </div>
 
@@ -158,3 +193,5 @@ export const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isAna
     </div>
   );
 };
+
+export default PredictionForm;
