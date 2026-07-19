@@ -2,11 +2,13 @@
 
 ## Beauty & Skincare Review Intelligence powered by Machine Learning
 
-![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge\&logo=python)
+![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Sklearn-orange?style=for-the-badge)
-![Deep Learning](https://img.shields.io/badge/Deep%20Learning-TensorFlow%2FKeras-ff6f61?style=for-the-badge\&logo=tensorflow)
-![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?style=for-the-badge\&logo=fastapi)
-![React](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-61dafb?style=for-the-badge\&logo=react)
+![Deep Learning](https://img.shields.io/badge/Deep%20Learning-TensorFlow%2FKeras-ff6f61?style=for-the-badge&logo=tensorflow)
+![Transfer Learning](https://img.shields.io/badge/Transfer%20Learning-Transformers-purple?style=for-the-badge)
+![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?style=for-the-badge&logo=fastapi)
+![React](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-61dafb?style=for-the-badge&logo=react)
+![Deployment](https://img.shields.io/badge/Deployment-Render%20%2B%20Vercel-success?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Portfolio%20Project-success?style=for-the-badge)
 
 ---
@@ -15,13 +17,21 @@
 
 **GlowWise AI** is a full-stack machine learning project that analyzes skincare product reviews and turns customer feedback into clear, actionable insights.
 
-The project predicts whether a skincare review indicates **high customer satisfaction** or **low/medium satisfaction**, explains which words influence the prediction, discovers customer segments using unsupervised learning, and serves the ML model through a FastAPI backend and a polished React frontend.
+The project predicts whether a skincare review indicates **high customer satisfaction** or **low/medium satisfaction**, explains which words influence the prediction, discovers customer segments using unsupervised learning, detects unusual reviews with anomaly detection, and serves the ML model through a FastAPI backend and a polished React frontend.
 
 This is not only a machine learning notebook — it is a complete ML product workflow:
 
 ```text
 Raw Reviews → Data Audit → Preprocessing → ML Models → Explainability → Clustering → API → Frontend Dashboard
 ```
+
+The project was later extended with modern AI experiments:
+
+```text
+Transfer Learning → Text CNN → Autoencoder Anomaly Detection → TCN Future Extension
+```
+
+These extensions were used to compare model complexity, explore modern NLP, and understand how different machine learning methods can support a real review intelligence product.
 
 ---
 
@@ -102,6 +112,30 @@ This helps companies understand different customer needs and improve product str
 
 ---
 
+### 🔍 4. Detect Unusual Reviews
+
+GlowWise AI also includes an experimental **Autoencoder anomaly detection** workflow.
+
+Instead of predicting satisfaction directly, the autoencoder learns what typical review patterns look like. Reviews with high reconstruction error are flagged as unusual.
+
+This can help identify:
+
+* unusual customer feedback
+* extreme review language
+* possible spam or fake reviews
+* emerging product issues
+* reviews that may need human review
+
+Important:
+
+```text
+Anomaly ≠ negative review
+```
+
+An anomaly means the review looks different from the majority of reviews.
+
+---
+
 ## 🏢 Real-World Use Case
 
 GlowWise AI could be used by:
@@ -125,6 +159,20 @@ ML model predicts satisfaction
 Result is saved in company dashboard
         ↓
 Product and marketing teams get insights
+```
+
+With the anomaly detection extension, the system could also flag unusual reviews for human review:
+
+```text
+New review arrives
+        ↓
+Satisfaction prediction
+        ↓
+Explainability + customer segment
+        ↓
+Anomaly detection check
+        ↓
+Possible human review if the text looks unusual
 ```
 
 ---
@@ -192,7 +240,7 @@ EDA showed that the dataset is useful but strongly imbalanced, which shaped the 
 
 ## 🤖 Models Tested
 
-GlowWise AI compares both classical machine learning and deep learning models.
+GlowWise AI compares classical machine learning, deep learning, transfer learning, and unsupervised learning methods.
 
 ### Classical ML Models
 
@@ -209,7 +257,10 @@ GlowWise AI compares both classical machine learning and deep learning models.
 * KNN + TruncatedSVD
 * Dense ANN / MLP
 * TensorFlow/Keras Text CNN
+* Sentence Transformer embeddings + Logistic Regression
+* Autoencoder anomaly detection
 * Unsupervised clustering with SVD/PCA + KMeans
+* TCN documented as a future sequence-modeling extension
 
 ---
 
@@ -286,6 +337,89 @@ This was an important insight:
 
 ---
 
+## 🌐 Transfer Learning & Advanced AI Extensions
+
+To connect the project to more advanced NLP and deep learning concepts, GlowWise AI was extended with several experimental AI workflows.
+
+---
+
+### 1. Transformer / Transfer Learning
+
+A pre-trained Sentence Transformer model was used as a feature extractor.
+
+Instead of representing reviews only with TF-IDF word counts, review text was converted into dense semantic embeddings.
+
+A Logistic Regression classifier was then trained on top of these embeddings.
+
+| Model                | Accuracy | Macro F1 | Class 0 Recall |
+| -------------------- | -------: | -------: | -------------: |
+| Production LR TF-IDF |   93.0%  |   88.9%  |          90.9% |
+| Text CNN             |   90.3%  |   84.9%  |          85.4% |
+| Transformer + LR     |   84.6%  |   78.3%  |          85.5% |
+
+The transformer experiment showed that semantic embeddings can capture useful minority-class signals, but the production TF-IDF + Logistic Regression model remained stronger overall.
+
+This was another important insight:
+
+> A modern model is valuable to test, but production decisions should be based on real performance, explainability, speed, and deployment cost.
+
+---
+
+### 2. Autoencoder Anomaly Detection
+
+An autoencoder was trained to reconstruct dense review representations created using TF-IDF and TruncatedSVD.
+
+Pipeline:
+
+```text
+Review Text → TF-IDF → SVD → Autoencoder → Reconstruction Error
+```
+
+Reviews with reconstruction error above the 95th percentile were flagged as anomalies.
+
+| Metric | Result |
+| ------ | -----: |
+| Sample size | 20,000 reviews |
+| Epochs trained | 50 |
+| Anomaly threshold | 0.00309 |
+| Flagged anomalies | 1,000 reviews |
+
+This adds a review monitoring layer to the project.
+
+The model can help surface unusual reviews that may need human attention, such as extreme feedback, unusual wording, possible spam, or emerging product issues.
+
+Important:
+
+```text
+Autoencoder anomaly detection is not used as the production satisfaction classifier.
+It complements the system by adding review quality monitoring.
+```
+
+---
+
+### 3. TCN Future Extension
+
+A Temporal Convolutional Network was documented as a future sequence-modeling extension.
+
+A possible future pipeline:
+
+```text
+Review Text → Tokenization → Embedding → TCN Blocks → Classification
+```
+
+TCN was not implemented in the production system because the project already includes strong classical ML, deep learning, transformer, and autoencoder experiments.
+
+It remains a future research direction for modeling longer phrase patterns in review text, such as:
+
+```text
+"broke me out"
+"not worth it"
+"holy grail"
+"wanted to love it but..."
+```
+
+---
+
 ## 🧠 Final Model Decision
 
 The final production model remains:
@@ -298,6 +432,7 @@ Why?
 
 * strong performance
 * high macro F1
+* high minority-class recall
 * fast inference
 * easy deployment
 * interpretable coefficients
@@ -305,7 +440,7 @@ Why?
 * simple to serve through FastAPI
 * easier to maintain than deep learning models
 
-The deep learning experiments were still valuable because they demonstrated a full advanced ML workflow and helped compare model complexity against real performance.
+The deep learning, transfer learning, and anomaly detection experiments were still valuable because they demonstrated a broader advanced ML workflow and helped compare model complexity against real performance.
 
 ---
 
@@ -324,6 +459,7 @@ Evaluation includes:
 * ROC-AUC
 * Precision-recall curves
 * Training vs validation curves for neural networks
+* Reconstruction error distribution for anomaly detection
 
 Important focus:
 
@@ -378,6 +514,32 @@ Moisture & Texture Fans showed the highest satisfaction rate, suggesting that se
 
 ---
 
+## 🔍 Anomaly Detection
+
+The project also includes an experimental autoencoder workflow for anomaly detection.
+
+Unlike satisfaction classification, anomaly detection does not predict whether a review is positive or negative.
+
+Instead, it asks:
+
+```text
+Does this review look unusual compared with most other reviews?
+```
+
+The autoencoder learns to reconstruct normal review representations. Reviews with high reconstruction error are flagged as unusual.
+
+Business use cases:
+
+* quality control
+* possible spam/fake review detection
+* early warning for unusual product issues
+* human review prioritization
+* monitoring extreme customer feedback
+
+This makes GlowWise AI more than a prediction system — it becomes a review intelligence and monitoring workflow.
+
+---
+
 ## 🏗️ System Architecture
 
 ```mermaid
@@ -386,12 +548,15 @@ flowchart TD
     B --> C[Preprocessing Pipeline]
     C --> D[Supervised ML Models]
     C --> E[Unsupervised Clustering]
+    C --> K[Advanced AI Experiments]
     D --> F[Best Production Model]
     F --> G[FastAPI Backend]
     G --> H[React Frontend Dashboard]
     E --> H
     D --> I[Explainability Reports]
     I --> H
+    K --> L[Transformer / CNN / Autoencoder Reports]
+    L --> M[Model & Research Insights]
     H --> J[Business Insights]
 ```
 
@@ -408,8 +573,10 @@ flowchart LR
     E --> F[Explainability]
     F --> G[Clustering]
     G --> H[Advanced ML]
-    H --> I[API]
-    I --> J[Frontend]
+    H --> I[Transfer Learning]
+    I --> J[Anomaly Detection]
+    J --> K[API]
+    K --> L[Frontend]
 ```
 
 ---
@@ -454,21 +621,41 @@ Main endpoints:
 
 ---
 
+## 💼 Business Value
+
+GlowWise AI can support beauty and skincare teams by turning review text into decision-ready insight.
+
+| Business Value | How GlowWise AI Supports It |
+| -------------- | ---------------------------- |
+| 🌸 Faster customer insight | Analyze thousands of reviews faster than manual reading |
+| ⚠️ Early detection of dissatisfaction | Identify low/medium satisfaction signals before they become bigger product issues |
+| 🧪 Better product development | Understand what customers love or dislike about texture, hydration, breakouts, irritation or product feel |
+| 👥 Customer segmentation | Discover review-based customer personas with unsupervised learning |
+| 🔍 Review quality monitoring | Flag unusual reviews using autoencoder anomaly detection |
+| 🧠 Advanced NLP decision support | Compare classical ML, deep learning, transformer embeddings and anomaly detection |
+| 📊 Data-driven beauty strategy | Support product, marketing and customer experience teams with real review data |
+
+---
+
 ## 🧰 Tech Stack
 
-| Area                     | Tools                                 |
-| ------------------------ | ------------------------------------- |
-| Language                 | Python, TypeScript                    |
-| ML                       | scikit-learn                          |
-| Deep Learning            | TensorFlow / Keras                    |
-| NLP                      | TF-IDF, TextVectorization, Embeddings |
-| Clustering               | KMeans, MiniBatchKMeans               |
-| Dimensionality Reduction | TruncatedSVD, PCA                     |
-| Backend                  | FastAPI                               |
-| Frontend                 | React, Vite, TypeScript               |
-| Visualization            | Matplotlib                            |
-| Notebook                 | Jupyter, Google Colab                 |
-| Version Control          | Git, GitHub                           |
+| Area                     | Tools                                         |
+| ------------------------ | --------------------------------------------- |
+| Language                 | Python, TypeScript                            |
+| ML                       | scikit-learn                                  |
+| Deep Learning            | TensorFlow / Keras                            |
+| Transfer Learning        | Sentence Transformers                         |
+| NLP                      | TF-IDF, TextVectorization, Embeddings         |
+| Clustering               | KMeans, MiniBatchKMeans                       |
+| Dimensionality Reduction | TruncatedSVD, PCA                             |
+| Anomaly Detection        | Autoencoder, Reconstruction Error             |
+| Future Extension         | TCN concept documentation                     |
+| Backend                  | FastAPI                                       |
+| Frontend                 | React, Vite, TypeScript                       |
+| Visualization            | Matplotlib                                    |
+| Notebook                 | Jupyter, Google Colab                         |
+| Deployment               | Render, Vercel                                |
+| Version Control          | Git, GitHub                                   |
 
 ---
 
@@ -501,7 +688,9 @@ glowwise-ai/
 │   │   ├── 05_model_explainability.ipynb
 │   │   ├── 06_clustering_insights.ipynb
 │   │   ├── 07_deep_learning_experiments.ipynb
-│   │   └── 08_text_cnn_colab.ipynb
+│   │   ├── 08_text_cnn_colab.ipynb
+│   │   ├── 09_transformer_transfer_learning.ipynb
+│   │   └── 10_autoencoder_anomaly_detection.ipynb
 │   │
 │   ├── src/
 │   │   ├── load_data.py
@@ -510,14 +699,19 @@ glowwise-ai/
 │   │   ├── model_comparison.py
 │   │   ├── model_explainability.py
 │   │   ├── clustering_insights.py
-│   │   └── deep_learning_experiments.py
+│   │   ├── deep_learning_experiments.py
+│   │   ├── run_transformer_experiment.py
+│   │   └── run_autoencoder_anomaly.py
 │   │
 │   └── reports/
 │       ├── figures/
 │       ├── deep_learning_summary.md
 │       ├── model_comparison_summary.md
 │       ├── model_explainability_summary.md
-│       └── clustering_summary.md
+│       ├── clustering_summary.md
+│       ├── transformer_transfer_learning_summary.md
+│       ├── autoencoder_anomaly_summary.md
+│       └── tcn_future_extension.md
 │
 ├── data/
 │   ├── raw/
@@ -595,6 +789,19 @@ ml/notebooks/08_text_cnn_colab.ipynb
 
 in Google Colab with GPU enabled.
 
+Additional advanced experiments:
+
+```text
+ml/notebooks/09_transformer_transfer_learning.ipynb
+ml/notebooks/10_autoencoder_anomaly_detection.ipynb
+```
+
+The TCN extension is documented as future work:
+
+```text
+ml/reports/tcn_future_extension.md
+```
+
 ---
 
 ## 🧪 Example Prediction
@@ -639,8 +846,13 @@ This project helped me practice the complete machine learning lifecycle:
 * using explainability
 * applying unsupervised learning
 * testing neural networks and CNNs
+* applying transfer learning with transformer embeddings
+* using autoencoders for anomaly detection
+* understanding reconstruction error and outlier detection
+* documenting TCN as a future sequence-modeling extension
 * building a backend API
 * creating a frontend dashboard
+* deploying a full-stack ML application
 * thinking like both a developer and a product builder
 
 ---
@@ -651,7 +863,11 @@ The most important insight from this project:
 
 > The most complex model is not always the best model.
 
-Although ANN and CNN models were tested, the tuned Logistic Regression model remained the strongest production choice because it provided the best balance between performance, interpretability, speed, and deployment simplicity.
+Although ANN, CNN, and Transformer-based models were tested, the tuned Logistic Regression model remained the strongest production choice because it provided the best balance between performance, interpretability, speed, and deployment simplicity.
+
+Later experiments with Transformer embeddings and Autoencoder anomaly detection expanded the project beyond basic classification. These extensions showed how modern NLP and unsupervised deep learning can support a broader review intelligence workflow.
+
+The final system therefore demonstrates not only prediction, but also explanation, segmentation, anomaly detection, deployment, and product-oriented AI thinking.
 
 GlowWise AI is therefore both a technical machine learning project and a product-oriented AI solution for real-world customer insight.
 
@@ -668,6 +884,7 @@ Build beauty with data.
 ```
 
 ---
+
 ## 🌐 Live Demo
 
 🚀 **Frontend Demo:**  
@@ -681,3 +898,5 @@ https://glowwise-ai.onrender.com/health
 
 🧠 **Model Status:**  
 https://glowwise-ai.onrender.com/api/model/status
+
+---
