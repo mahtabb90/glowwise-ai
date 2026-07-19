@@ -269,8 +269,8 @@ function App() {
             <p className="text-sm md:text-base text-plum font-medium leading-relaxed">
               Your smart skincare review companion for beauty insights and product feedback.
             </p>
-            <p className="text-xs text-muted-plum leading-relaxed">
-              Discover what people truly feel about skincare products.
+            <p className="text-xs text-muted-plum leading-relaxed max-w-xl mx-auto">
+              An end-to-end ML platform featuring classification, explainability, customer personas, transfer learning, anomaly detection and live deployment.
             </p>
           </div>
           
